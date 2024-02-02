@@ -1,6 +1,6 @@
 {
   "name": "use-hydrate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple Redux & NextJS 13 AppRouter hydration",
   "author": "Samuel Magny (samuelint@gmail.com)",
   "main": "dist/index.js",
