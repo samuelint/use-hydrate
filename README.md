@@ -8,8 +8,8 @@ npm i use-hydrate
 </pre>
 
 <h2>Usage example</h2>
-<code>
-//layout.tsx
+
+```typescript
 import React, { ReactNode, use } from 'react';
 
 
@@ -33,10 +33,9 @@ export default async function Layout({
     </div>
   );
 }
-</code>
+```
 
-<code>
-//client-side.tsx
+```typescript
 'use client';
 import { useHydrate } from 'use-hydrate';
 
@@ -58,4 +57,5 @@ export default function MyClientSideComponent({ existing = [] }: Props) {
     </div>
   );
 }
-</code>
+```
+
