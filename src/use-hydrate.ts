@@ -12,7 +12,7 @@ export function useHydrate<
 >
     (initial: TInitialValue,
       action: TAction,
-      selector: (state: TState) => TSelectedValue): TSelectedValue {
+      selector?: (state: TState) => TSelectedValue): TSelectedValue | undefined {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(action(initial));
@@ -20,5 +20,6 @@ export function useHydrate<
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return useSelector<TState, TSelectedValue>(selector);
+    // @ts-ignore -- Allow to return undefined if selector is not defined
+    return useSelector<TState, TSelectedValue>(selector ? selector : () => undefined);
 }
